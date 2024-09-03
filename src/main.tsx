@@ -12,8 +12,17 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <KindeProvider
       clientId="e4767b7f58b04610a9c37df093e3f96a"
       domain="https://chukwuemerie.kinde.com"
-      redirectUri="http://localhost:5173"
-      logoutUri="http://localhost:5173"
+      redirectUri={
+        process.env.NODE_ENV === "production"
+          ? "https://todo-ten-pi-85.vercel.app"
+          : "http://localhost:5173"
+      }
+      logoutUri={
+        process.env.NODE_ENV === "production"
+          ? "https://todo-ten-pi-85.vercel.app"
+          : "http://localhost:5173"
+      }
+      isDangerouslyUseLocalStorage={true}
     >
       <ContextProvider>
         <ToastContainer />

@@ -8,7 +8,7 @@ export default function TodoList() {
     <ul className=" overflow-auto mb-4">
       {todos.length === 0 && (
         <li className="h-full flex justify-center items-center lg:text-xl font-bold">
-          Start buy adding a todo
+           Add New Todo 
         </li>
       )}
       {todos.map((todo: Todo) => (
